@@ -1,0 +1,10 @@
+^C:\USERS\FATIM\STUDIOPROJECTS\ELBIYAFET\BUILD\WINDOWS\CMAKEFILES\918CDFDC76451492021E1CE57288BAE1\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
