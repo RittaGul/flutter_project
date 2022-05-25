@@ -34,6 +34,11 @@ class _apiPage extends State<apiPage> {
                     child: ListView(
                       children: [
                         NewContainer(
+                          ContainerImage: getItemsByApi[0].image,
+                          ContainerTitle: getItemsByApi[0].title,
+                          ContainerPrice: getItemsByApi[0].price,
+                        ),
+                        NewContainer(
                           ContainerImage: getItemsByApi[1].image,
                           ContainerTitle: getItemsByApi[1].title,
                           ContainerPrice: getItemsByApi[1].price,
@@ -132,11 +137,6 @@ class _apiPage extends State<apiPage> {
                           ContainerImage: getItemsByApi[19].image,
                           ContainerTitle: getItemsByApi[19].title,
                           ContainerPrice: getItemsByApi[19].price,
-                        ),
-                        NewContainer(
-                          ContainerImage: getItemsByApi[20].image,
-                          ContainerTitle: getItemsByApi[20].title,
-                          ContainerPrice: getItemsByApi[20].price,
                         ),
                       ],
                     ),

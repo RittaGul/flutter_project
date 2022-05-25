@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sampleproject/screens/homeScreen.dart';
-import 'package:sampleproject/screens/onBoardingScreen.dart';
 import 'package:sampleproject/toolsUtilites.dart';
 
 void main() async {
@@ -23,9 +22,9 @@ class MyApp extends StatelessWidget {
         primaryColor: Toolsutilites.mainColor,
       ),
       //استدعيت الصفحات الرئيسية
-      home: //HomePage(),
-          // apiPage(),
-          OnBoardingPage(),
+      home: HomePage(),
+
+      //OnBoardingPage(),
     );
   }
 }

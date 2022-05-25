@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:sampleproject/screens/homeScreen.dart';
 import 'package:sampleproject/toolsUtilites.dart';
@@ -311,8 +310,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ],
                   ),
                   Divider(),
-                  Padding(padding: EdgeInsets.all(8.0),
-                    child: Text("Similar Products ",style: TextStyle(fontWeight: FontWeight.bold),),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      "Similar Products ",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                   Container(
                     height: 360.0,
@@ -334,7 +337,6 @@ class SimilarProd extends StatefulWidget {
 }
 
 class _SimilarProdState extends State<SimilarProd> {
-
   var productList = [
     {
       'tagHero': '1.image',
