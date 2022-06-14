@@ -1,129 +1,84 @@
-
-import '../sizedBox.dart';
-import '../toolsUtilites.dart';
-import 'logInScreen.dart';
-import 'signUpScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:sampleproject/sizedBox.dart';
+import 'package:sampleproject/toolsUtilites.dart';
+import 'package:sampleproject/auth/AuthScreen.dart';
 
-class AccountPage extends StatelessWidget {
+class AccountPage extends StatefulWidget {
+  @override
+  State<AccountPage> createState() => _AccountPageState();
+}
 
-
+class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(color: Toolsutilites.mainColor),
+      backgroundColor: Toolsutilites.whiteColor,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
-          //لحتى نحط كل النصوص بالنص
           mainAxisAlignment: MainAxisAlignment.center,
-
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text(
-              //معلومات النص اللي عند الصفحة الرئيسية
-              "Join With Us Now ",
-
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-                color: Toolsutilites.whiteColor,
-              ),
+            Column(
+              children: [
+                Text(
+                  "Join With Us Now ",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                    color: Toolsutilites.mainColor,
+                  ),
+                ),
+              ],
             ),
-            //المسافة بين النص و اول بوتون
             longSizedBox(),
-
-            Material(
-              // بوتون اللوغ ان لونه وتصميمه
-              color: Toolsutilites.whiteColor,
-              borderRadius: BorderRadius.circular(30),
-              child: InkWell(
-                //الدالة اللي بتاخد ع غير صفحة
-                hoverColor: Toolsutilites.secondColor,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LogInPage()),
-                  );
-                },
-                //ستايلات البوتون الاول
-                borderRadius: BorderRadius.circular(30),
-                child: Container(
-                  width: 175,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      // الوان الشادو تبع البوتون الاول
-                      BoxShadow(
-                        offset: Offset(0, 15),
-                        blurRadius: 20,
-                        color:
-                        Color.fromARGB(255, 183, 183, 183).withOpacity(.11),
-                      )
-                    ],
-                  ),
-                  //معلومات النص بالبوتون
-                  alignment: Alignment.center,
-                  child: const Text(
-                    "Log In",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Color(0xff8f8f8f),
-                    ),
-                  ),
-                ),
-              ),
+            MyButton(
+              color: Toolsutilites.mainColor,
+              title: "Log In ",
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed("login");
+              },
             ),
-            //الفرق بين البوتونين
-            SizedBox(
-              height: 40,
-            ),
-            Material(
-              //معلومات البوتون التاني
-              color: Toolsutilites.whiteColor,
-              borderRadius: BorderRadius.circular(30),
-              child: InkWell(
-                hoverColor: Toolsutilites.secondColor,
-                onTap: () {
-                  Navigator.push(
-                    //التحويل للصفحة الثانية
-                    context,
-                    MaterialPageRoute(builder: (context) =>  SignUpPage()),
-                  );
-                },
-                //ستايل البوتون
-                borderRadius: BorderRadius.circular(30),
-                child: Container(
-                  width: 175,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 15),
-                        blurRadius: 20,
-                        //اللون عند الضغط عالبوتون
-                        color:
-                        Color.fromARGB(255, 183, 183, 183).withOpacity(.11),
-                      )
-                    ],
-                  ),
-                  //معلومات النص الثاني
-                  alignment: Alignment.center,
-                  child: const Text(
-                    "sign up",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff8f8f8f),
-                    ),
-                  ),
-                ),
-              ),
+            MyButton(
+              color: Toolsutilites.mainColor,
+              title: " Sign Up ",
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed("signup");
+              },
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class MyButton extends StatelessWidget {
+  MyButton({required this.color, required this.title, required this.onPressed});
+  final Color color;
+  final String title;
+  final VoidCallback onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Material(
+          elevation: 5,
+          color: color,
+          borderRadius: BorderRadius.circular(5),
+          child: MaterialButton(
+            onPressed: onPressed,
+            minWidth: 170,
+            height: 50,
+            child: Text(
+              title,
+              style: TextStyle(
+                  color: Toolsutilites.whiteColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            ),
+          )),
     );
   }
 }

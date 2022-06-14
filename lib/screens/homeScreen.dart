@@ -1,6 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../HorizontalListView.dart';
 import '../carouselSlider.dart';
 import '../drawerScreen.dart';
 import '../products.dart';
@@ -8,11 +7,18 @@ import '../toolsUtilites.dart';
 import 'appBar.dart';
 
 class HomePage extends StatefulWidget {
+  var IdKey;
+  HomePage({this.IdKey});
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +33,9 @@ class _HomePageState extends State<HomePage> {
           decoration: BoxDecoration(color: Toolsutilites.whiteColor),
           width: 280,
           height: double.infinity,
-          child: DrawerPage(),
+          child: DrawerPage(
+            idKey: widget.IdKey,
+          ),
         ),
       ),
       body: ListView(
@@ -35,13 +43,6 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           //الليست اللي بتتحرك لحالها
           imageCarouselSlider,
-          //Padding(
-          // padding: EdgeInsets.all(7.0),
-          // child: Text(
-          //   'Cateories',
-          // ),
-          //  ),
-          //HorizontalList(),
           Padding(
             padding: EdgeInsets.all(15.0),
             child: Text(
@@ -53,8 +54,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            height: 380,
-            child: Products(),
+            height: 420,
+            child: Products(idKey: widget.IdKey),
           ),
         ],
       ),

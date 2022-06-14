@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:sampleproject/toolsUtilites.dart';
 
@@ -11,21 +10,27 @@ class _CartProductsState extends State<CartProducts> {
   var ProductsOnTheCart = [
     {
       //'tagHero': '1.image',
-      "name": "elbise",
+      "name": "white dress",
       "picture": "assets/products/1.png",
-      "new price": 85,
+      "new price": 250,
       "size": "7",
-      "color": "Red",
-      "quantity": 1,
+      "color": "white",
     },
     {
       //'tagHero': '2.image',
-      "name": "elbise",
+      "name": "red dress",
       "picture": "assets/products/2.png",
-      "new price": 85,
+      "new price": 200,
       "size": "7",
       "color": "Red",
-      "quantity": 2,
+    },
+    {
+      //'tagHero': '13.image',
+      "name": "white shirt",
+      "picture": "assets/products/13.png",
+      "new price": 299,
+      "size": "7",
+      "color": "white",
     },
   ];
 
@@ -41,7 +46,6 @@ class _CartProductsState extends State<CartProducts> {
           CartProdNewPrice: ProductsOnTheCart[index]["new price"],
           CartProdSize: ProductsOnTheCart[index]["size"],
           CartProdColor: ProductsOnTheCart[index]["color"],
-          CartProdqty: ProductsOnTheCart[index]["quantity"],
         );
       },
     );
@@ -55,14 +59,14 @@ class SingleCartProd extends StatelessWidget {
   final CartProdNewPrice;
   final CartProdSize;
   final CartProdColor;
-  final CartProdqty;
-  SingleCartProd(
-      {required this.CartProdName,
-      required this.CartProdPicture,
-      required this.CartProdNewPrice,
-      required this.CartProdSize,
-      required this.CartProdColor,
-      required this.CartProdqty});
+
+  SingleCartProd({
+    required this.CartProdName,
+    required this.CartProdPicture,
+    required this.CartProdNewPrice,
+    required this.CartProdSize,
+    required this.CartProdColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -112,10 +116,6 @@ class SingleCartProd extends StatelessWidget {
               ),
             ),
           ],
-        ),
-        trailing: SafeArea(top: true ,
-          child:
-              IconButton(onPressed: () {}, icon: Icon(Icons.arrow_drop_down)),
         ),
       ),
     );

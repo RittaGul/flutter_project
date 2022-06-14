@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sampleproject">
+    package="com.rittagulnetwork.elbiyafet">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="sampleproject"
+        android:label="elbiyafet"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic = "true"

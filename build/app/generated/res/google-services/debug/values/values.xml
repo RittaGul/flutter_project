@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">606246433879-dqb8irj4kfk0u8e29k9dlu6bm1i9jrt0.apps.googleusercontent.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">606246433879</string>
-    <string name="google_api_key" translatable="false">AIzaSyCvlD1Rm2ytVH1df35c2vWTRprWM7txWeE</string>
-    <string name="google_app_id" translatable="false">1:606246433879:android:d7148da33635c871965f12</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCvlD1Rm2ytVH1df35c2vWTRprWM7txWeE</string>
-    <string name="google_storage_bucket" translatable="false">rittanetwork.appspot.com</string>
-    <string name="project_id" translatable="false">rittanetwork</string>
+    <string name="default_web_client_id" translatable="false">821191908676-tqct27mle8t7hkksja3p4dbl7tmrlgvs.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">821191908676</string>
+    <string name="google_api_key" translatable="false">AIzaSyDpciGCl20upQeAqgwtQdoRd-g9wDmJUYM</string>
+    <string name="google_app_id" translatable="false">1:821191908676:android:c2ba08b0117ccab6abcb11</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDpciGCl20upQeAqgwtQdoRd-g9wDmJUYM</string>
+    <string name="google_storage_bucket" translatable="false">rittanetwork-f264f.appspot.com</string>
+    <string name="project_id" translatable="false">rittanetwork-f264f</string>
 </resources>

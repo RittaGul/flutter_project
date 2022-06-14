@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "606246433879",
-    "project_id": "rittanetwork",
-    "storage_bucket": "rittanetwork.appspot.com"
+    "project_number": "821191908676",
+    "project_id": "rittanetwork-f264f",
+    "storage_bucket": "rittanetwork-f264f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:606246433879:android:d7148da33635c871965f12",
+        "mobilesdk_app_id": "1:821191908676:android:c2ba08b0117ccab6abcb11",
         "android_client_info": {
-          "package_name": "com.example.sampleproject"
+          "package_name": "com.rittagulnetwork.elbiyafet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "606246433879-dqb8irj4kfk0u8e29k9dlu6bm1i9jrt0.apps.googleusercontent.com",
+          "client_id": "821191908676-tqct27mle8t7hkksja3p4dbl7tmrlgvs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCvlD1Rm2ytVH1df35c2vWTRprWM7txWeE"
+          "current_key": "AIzaSyDpciGCl20upQeAqgwtQdoRd-g9wDmJUYM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "606246433879-dqb8irj4kfk0u8e29k9dlu6bm1i9jrt0.apps.googleusercontent.com",
+              "client_id": "821191908676-tqct27mle8t7hkksja3p4dbl7tmrlgvs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

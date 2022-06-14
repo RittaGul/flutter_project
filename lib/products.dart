@@ -1,99 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:sampleproject/Database/dataInf.dart';
 import 'package:sampleproject/productDetails.dart';
 
 class Products extends StatefulWidget {
+  String idKey;
+  Products({required this.idKey});
   @override
   State<Products> createState() => _ProductsState();
 }
 
 class _ProductsState extends State<Products> {
   //المعلوماات
-  var productList = [
-    {
-      'tagHero': '1.image',
-      "name": "elbise",
-      "picture": "assets/products/1.png",
-      "old_price": 120,
-      "new price": 85
-    },
-    {
-      'tagHero': '2.image',
-      "name": "elbise",
-      "picture": "assets/products/2.png",
-      "old_price": 120,
-      "new price": 85
-    },
-    {
-      'tagHero': '3.image',
-      "name": "elbise",
-      "picture": "assets/products/3.png",
-      "old_price": 120,
-      "new price": 85
-    },
-    {
-      'tagHero': '4.image',
-      "name": "elbise",
-      "picture": "assets/products/4.png",
-      "old_price": 150,
-      "new price": 100
-    },
-    {
-      'tagHero': '5.image',
-      "name": "elbise",
-      "picture": "assets/products/5.png",
-      "old_price": 150,
-      "new price": 100
-    },
-    {
-      'tagHero': '6.image',
-      "name": "elbise",
-      "picture": "assets/products/6.png",
-      "old_price": 150,
-      "new price": 100
-    },
-    {
-      'tagHero': '7.image',
-      "name": "elbise",
-      "picture": "assets/products/7.png",
-      "old_price": 150,
-      "new price": 100
-    },
-    {
-      'tagHero': '8.image',
-      "name": "elbise",
-      "picture": "assets/products/8.png",
-      "old_price": 150,
-      "new price": 100
-    },
-    {
-      'tagHero': '9.image',
-      "name": "elbise",
-      "picture": "assets/products/9.png",
-      "old_price": 150,
-      "new price": 100
-    },
-    {
-      'tagHero': '10.image',
-      "name": "elbise",
-      "picture": "assets/products/10.png",
-      "old_price": 150,
-      "new price": 100
-    },
-    {
-      'tagHero': '11.image',
-      "name": "elbise",
-      "picture": "assets/products/11.png",
-      "old_price": 150,
-      "new price": 100
-    },
-    {
-      'tagHero': '12.image',
-      "name": "elbise",
-      "picture": "assets/products/12.png",
-      "old_price": 150,
-      "new price": 100
-    },
-  ];
 
 //
 //
@@ -112,6 +29,8 @@ class _ProductsState extends State<Products> {
         return Padding(
           padding: const EdgeInsets.all(0),
           child: SingleProd(
+            idKey: widget.idKey,
+            id: item['id'],
             tagHero: item['tagHero'],
             prodName: item['name'],
             prodPicture: item['picture'],
@@ -125,6 +44,8 @@ class _ProductsState extends State<Products> {
 }
 
 class SingleProd extends StatelessWidget {
+  final idKey;
+  final id;
   final tagHero;
   final prodName;
   final prodPicture;
@@ -132,7 +53,9 @@ class SingleProd extends StatelessWidget {
   final prodNewPrice;
 
   SingleProd(
-      {required this.tagHero,
+      {required this.idKey,
+      required this.id,
+      required this.tagHero,
       required this.prodName,
       required this.prodPicture,
       required this.prodOldPrice,
@@ -150,6 +73,8 @@ class SingleProd extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: ((context) => ProductDetails(
+                        idKey: idKey,
+                        id: id,
                         tagHero: tagHero,
                         productDetailName: prodName,
                         productDetailPicture: prodPicture,

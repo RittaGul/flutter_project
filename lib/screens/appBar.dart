@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../drawerScreens/userCartScreen.dart';
 import '../toolsUtilites.dart';
 
 class AppBarPiece extends StatelessWidget {
@@ -17,26 +15,13 @@ class AppBarPiece extends StatelessWidget {
             fontWeight: FontWeight.bold),
       ),
       actions: <Widget>[
-        //البوتونات اللي بالاب بار
-        IconButton(
-          icon: Icon(
-            Icons.search,
-            color: Toolsutilites.whiteColor,
-          ),
-          onPressed: () {},
-        ),
         IconButton(
           icon: Icon(
             Icons.shopping_cart,
             color: Toolsutilites.whiteColor,
           ),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => userCartPage(),
-              ),
-            );
+            Navigator.of(context).pushNamed("usercartpage");
           },
         ),
       ],

@@ -1,8 +1,8 @@
 <variant
     name="release"
-    package="com.example.sampleproject"
+    package="com.rittagulnetwork.elbiyafet"
     minSdkVersion="21"
-    targetSdkVersion="31"
+    targetSdkVersion="30"
     shrinking="true"
     mergedManifest="C:\Users\fatim\StudioProjects\elbiyafet\build\app\intermediates\merged_manifest\release\AndroidManifest.xml"
     proguardFiles="C:\Users\fatim\StudioProjects\elbiyafet\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.1.2;C:\src\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
@@ -30,7 +30,7 @@
   </manifestPlaceholders>
   <mainArtifact
       classOutputs="C:\Users\fatim\StudioProjects\elbiyafet\build\app\intermediates\javac\release\classes;C:\Users\fatim\StudioProjects\elbiyafet\build\app\tmp\kotlin-classes\release;C:\Users\fatim\StudioProjects\elbiyafet\build\app\kotlinToolingMetadata;C:\Users\fatim\StudioProjects\elbiyafet\build\app\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
-      applicationId="com.example.sampleproject"
+      applicationId="com.rittagulnetwork.elbiyafet"
       generatedSourceFolders="C:\Users\fatim\StudioProjects\elbiyafet\build\app\generated\ap_generated_sources\release\out;C:\Users\fatim\StudioProjects\elbiyafet\build\app\generated\aidl_source_output_dir\release\out;C:\Users\fatim\StudioProjects\elbiyafet\build\app\generated\source\buildConfig\release;C:\Users\fatim\StudioProjects\elbiyafet\build\app\generated\renderscript_source_output_dir\release\out"
       generatedResourceFolders="C:\Users\fatim\StudioProjects\elbiyafet\build\app\generated\res\google-services\release;C:\Users\fatim\StudioProjects\elbiyafet\build\app\generated\res\rs\release;C:\Users\fatim\StudioProjects\elbiyafet\build\app\generated\res\resValues\release">
   </mainArtifact>
