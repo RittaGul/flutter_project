@@ -22,7 +22,7 @@ class _AboutPageState extends State<AboutPage> {
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: CircleAvatar(
-                radius: 60,
+                radius: 65,
                 backgroundImage: AssetImage("assets/avatar/profile.jpeg"),
               ),
             ),
@@ -30,7 +30,7 @@ class _AboutPageState extends State<AboutPage> {
               padding: const EdgeInsets.all(0.0),
               child: DefaultTextStyle(
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 22,
                     color: Toolsutilites.mainColor,
                     fontWeight: FontWeight.bold),
                 child: AnimatedTextKit(
@@ -62,7 +62,7 @@ class _AboutPageState extends State<AboutPage> {
                 fadingEdgeEndFraction: 0.2,
                 blankSpace: 20.0,
                 velocity: 100.0,
-                pauseAfterRound: Duration(seconds: 1),
+                pauseAfterRound: Duration(seconds: 2),
                 startPadding: 10.0,
                 accelerationDuration: Duration(seconds: 1),
                 accelerationCurve: Curves.linear,
@@ -89,7 +89,7 @@ class InfoCart extends StatelessWidget {
       onTap: onPressed,
       child: Card(
         color: Toolsutilites.whiteColor,
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal:19),
         child: ListTile(
           leading: Icon(icon, color: Toolsutilites.mainColor),
           title: Text(

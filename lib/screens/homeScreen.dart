@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            height: 420,
+            height: 440,
             child: Products(idKey: widget.IdKey),
           ),
         ],

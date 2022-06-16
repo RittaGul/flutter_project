@@ -8,14 +8,18 @@ class IdItem {
   IdItem({required this.Id});
 }
 
+//كلاس من نوع اوث
 class Auth with ChangeNotifier {
+//ليست من نوع ادي ايتم لاضافة مستخدم جديد
   List<IdItem> addNewUser = [];
   String userId = '';
   String idToken = '';
-  Future<void> _authenticate(
-      {required String email,
-      required String password,
-      required String urlSegment}) async {
+  //المتغير الاخير يا تسجيل دخول يا انشاء حساب
+  Future<void> _authenticate({
+    required String email,
+    required String password,
+    required String urlSegment,
+  }) async {
     final String urlApi =
         'https://identitytoolkit.googleapis.com/v1/accounts:$urlSegment?key=AIzaSyDpciGCl20upQeAqgwtQdoRd-g9wDmJUYM';
 
@@ -34,9 +38,11 @@ class Auth with ChangeNotifier {
       }
       userId = resData['localId'];
       idToken = resData['idToken'];
-      addNewUser.add(IdItem(
-        Id: userId,
-      ));
+      addNewUser.add(
+        IdItem(
+          Id: userId,
+        ),
+      );
       print('user Id ====' + userId);
       print('idToken Id ====' + idToken);
     } catch (_) {

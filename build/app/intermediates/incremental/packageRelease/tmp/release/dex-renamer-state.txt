@@ -1,4 +1,4 @@
-#Tue Jun 14 20:50:46 TRT 2022
+#Thu Jun 16 22:50:44 TRT 2022
 base.0=C\:\\Users\\fatim\\StudioProjects\\elbiyafet\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

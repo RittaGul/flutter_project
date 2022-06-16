@@ -39,10 +39,10 @@ class _newApp1State extends State<newApp1> {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
-            primarySwatch: Colors.blue,
-          ),
-          home: this.widget.fetch == true
+              // scaffoldBackgroundColor: Colors.white,
+              // primarySwatch: Colors.blue,
+              ),
+          home: this.widget.fetch == false
               ? AuthScreen()
               : HomePage(
                   IdKey: this.widget.IdKey,
@@ -54,34 +54,3 @@ class _newApp1State extends State<newApp1> {
         ));
   }
 }
-
-/////
-////////////
-//////
-/////
-///
-/////
-///
-///
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: 'Elbiyafet Shop',
-//       theme: ThemeData(
-//         primaryColor: Toolsutilites.mainColor,
-//       ),
-//       //استدعيت الصفحات الرئيسية
-//       home: islogin == false ? Login() : HomePage(),
-
-//       routes: {
-//         "login": (context) => Login(),
-//         "signup": (context) => SignUp(),
-//         "usercartpage": (context) => userCartPage(),
-//         "useraccountpage": (context) => userAccountPage(),
-//         "homepage": (context) => HomePage(),
-//       },
-//     );
-//   }
-// }

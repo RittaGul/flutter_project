@@ -86,7 +86,7 @@ class SingleProd extends StatelessWidget {
             }),
             child: GridTile(
               footer: Container(
-                color: Colors.white70,
+                color: Colors.white24,
                 child: Row(
                   children: <Widget>[
                     Expanded(

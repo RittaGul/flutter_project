@@ -1,13 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sampleproject/Database/dataInf.dart';
 import 'package:sampleproject/auth/auth.dart';
-
 import 'package:sampleproject/screens/accountScreen.dart';
 import 'package:sampleproject/screens/homeScreen.dart';
-import 'package:sampleproject/screens/myInf.dart';
 import 'package:sampleproject/toolsUtilites.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -17,6 +14,7 @@ class AuthScreen extends StatefulWidget {
   State<AuthScreen> createState() => _AuthScreenState();
 }
 
+//للثوابت
 enum AuthMode {
   SignUp,
   Login,
@@ -24,6 +22,7 @@ enum AuthMode {
 
 class _AuthScreenState extends State<AuthScreen> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  //لحتى ياخدو مباشرة ع الساين اب
   AuthMode authMode = AuthMode.SignUp;
   Map<String, String> _authData = {
     'email': '',
@@ -60,10 +59,10 @@ class _AuthScreenState extends State<AuthScreen> {
                         },
                         validator: (val) {
                           if (val!.length > 100) {
-                            return "username cant to be larger than 100 letter";
+                            return "username can't to be larger than 100 letter";
                           }
                           if (val.length < 2) {
-                            return "username cant to be less than 2 letter";
+                            return "username can't to be less than 2 letter";
                           }
                           return null;
                         },
@@ -93,10 +92,10 @@ class _AuthScreenState extends State<AuthScreen> {
                       },
                       validator: (val) {
                         if (val!.length > 100) {
-                          return "email cant to be larger than 100 letter";
+                          return "email can't to be larger than 100 letter";
                         }
                         if (val.length < 2) {
-                          return "email cant to be less than 2 letter";
+                          return "email can't to be less than 2 letter";
                         }
                         return null;
                       },
@@ -124,10 +123,10 @@ class _AuthScreenState extends State<AuthScreen> {
                       },
                       validator: (val) {
                         if (val!.length > 100) {
-                          return "password cant to be larger than 100 letter";
+                          return "password can't to be larger than 100 letter";
                         }
                         if (val.length < 4) {
-                          return "password cant to be less than 4 letter";
+                          return "password can't to be less than 4 letter";
                         }
                         return null;
                       },
@@ -154,8 +153,8 @@ class _AuthScreenState extends State<AuthScreen> {
                       child: Row(
                         children: [
                           Text(authMode == AuthMode.SignUp
-                              ? "if you have account "
-                              : 'Create new account'),
+                              ? "If you already have an account, just login   "
+                              : 'If you don\'t have an account already then  '),
                           InkWell(
                             onTap: () {
                               setState(() {
@@ -196,10 +195,8 @@ class _AuthScreenState extends State<AuthScreen> {
       FocusScope.of(context).unfocus();
       _formKey.currentState!.save();
     }
+    //الشاريد بتخزن البيانات بالداتا بس مساحتها خفيفة
 
-    // setState(() {
-    //   isLoading = true;
-    // });
     SharedPreferences s1 = await SharedPreferences.getInstance();
     try {
       if (authMode == AuthMode.Login) {
@@ -207,13 +204,16 @@ class _AuthScreenState extends State<AuthScreen> {
           _authData['email'] as String,
           _authData['password'] as String,
         );
-
+//لحتى يحفظ المعلومات بالليست اللي فوق
         var x = Provider.of<Auth>(context, listen: false).addNewUser;
         print('================== ${x[0].Id}');
 
         ////////////////////////
+
+        //هي بتتخزن داخل الشاريد
         s1.setString('key', '${x[0].Id}');
-        s1.setBool('fetch', false);
+        //التحقق اذا مسجل دخول او لا
+        s1.setBool('fetch', true);
         /////////////////////
         ///
         Navigator.pushReplacement(
@@ -236,7 +236,7 @@ class _AuthScreenState extends State<AuthScreen> {
         ////////////////////////////////////
         ///////////
         s1.setString('key', '${x[0].Id}');
-        s1.setBool('fetch', false);
+        s1.setBool('fetch', true);
         ///////////////////////
         //////////
         ///
@@ -245,7 +245,7 @@ class _AuthScreenState extends State<AuthScreen> {
         ////
 
         ///
-        ///
+        ///لحتى يحفظ البيانات بالفاير
 
         await FirebaseFirestore.instance
             .collection('Users')
@@ -278,9 +278,6 @@ class _AuthScreenState extends State<AuthScreen> {
         );
       }
     } catch (error) {
-      // setState(() {
-      //   isLoading = false;
-      // });
       var errorMessage = 'Authentication Faild';
       if (error.toString().contains('EMAIL_EXISTS')) {
         errorMessage = 'This email address is already in use.';

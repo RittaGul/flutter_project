@@ -1,29 +1,26 @@
 class Items {
+  /////////عرفت متغيرات متل مانها مكتوبة بصفحة الapi
   var id;
   String title;
-  // String description;
   var price;
   String image;
-  // String category;
-
+/////////////لحتى ياخد البيانات من الكلاس
   Items({
     required this.id,
     required this.title,
-    //required this.category,
-    //required this.description,
     required this.image,
     required this.price,
   });
+  ////////////نوع البيانات ماب
   factory Items.fromjson(Map<String, dynamic> item) {
     return Items(
       id: item['id'],
       title: item['title'],
-      // category: item['category'],
-      //description: item['description'],
       image: item['image'],
       price: item['price'],
     );
   }
 }
 
+///////////منعمل ليست من نوع الكلاس
 List<Items> getItemsByApi = [];

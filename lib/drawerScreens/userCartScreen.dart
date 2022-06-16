@@ -3,8 +3,6 @@ import 'package:sampleproject/cartProducts.dart';
 import 'package:sampleproject/toolsUtilites.dart';
 
 class userCartPage extends StatefulWidget {
-
-
   @override
   State<userCartPage> createState() => _userCartPageState();
 }
@@ -14,6 +12,7 @@ class _userCartPageState extends State<userCartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Toolsutilites.mainColor,
         elevation: 0,
         title: Text(
@@ -23,16 +22,6 @@ class _userCartPageState extends State<userCartPage> {
               fontSize: 20,
               fontWeight: FontWeight.bold),
         ),
-        actions: <Widget>[
-          //البوتونات اللي بالاب بار
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Toolsutilites.whiteColor,
-            ),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: CartProducts(),
       bottomNavigationBar: Container(
@@ -42,7 +31,7 @@ class _userCartPageState extends State<userCartPage> {
             Expanded(
               child: ListTile(
                 title: Text("Total :"),
-                subtitle: Text("500"),
+                subtitle: Text("500 tl"),
               ),
             ),
             Expanded(
@@ -51,7 +40,8 @@ class _userCartPageState extends State<userCartPage> {
                 child: Text(
                   "Check out ",
                   style: TextStyle(color: Colors.white),
-                ),color: Toolsutilites.mainColor,
+                ),
+                color: Toolsutilites.mainColor,
               ),
             ),
           ],

@@ -19,16 +19,19 @@ class _DrawerPageState extends State<DrawerPage> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
+      //كود ثابت هدول
       stream: FirebaseFirestore.instance
           .collection('/Users/${widget.idKey}/userInf/')
           .snapshots(),
       builder: ((context, snapshot) {
         print(widget.idKey);
         if (!snapshot.hasData) {
+          //اذا البيانات فاضية يعمل انتظار
           return Center(
             child: CircularProgressIndicator(),
           );
         }
+        //كود ثابت
         List<DocumentSnapshot> s1 = snapshot.data!.docs;
         // '${(s1[0] as dynamic)['userName']}'
         return Drawer(
@@ -131,7 +134,7 @@ class _DrawerPageState extends State<DrawerPage> {
               InkWell(
                 onTap: () async {
                   SharedPreferences s1 = await SharedPreferences.getInstance();
-                  s1.setBool('fetch', true);
+                  s1.setBool('fetch', false);
                   s1.setString('key', '');
                   Navigator.push(
                     context,

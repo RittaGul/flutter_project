@@ -121,15 +121,17 @@ class _ProductDetailsState extends State<ProductDetails> {
                         children: <Widget>[
                           /////////  البوتون تبع الشراء  ////////
 
-                          // Expanded(
-                          //   child: MaterialButton(
-                          //     onPressed: () {},
-                          //     color: Toolsutilites.mainColor,
-                          //     textColor: Toolsutilites.whiteColor,
-                          //     elevation: 0.2,
-                          //     child: Text("buy now "),
-                          //   ),
-                          // ),
+                          Expanded(
+                            child: MaterialButton(
+                              onPressed: () {
+                                Navigator.of(context).pushNamed("usercartpage");
+                              },
+                              color: Toolsutilites.mainColor,
+                              textColor: Toolsutilites.whiteColor,
+                              elevation: 0.2,
+                              child: Text("buy now "),
+                            ),
+                          ),
                           ///////الايقونات اللي جنب الشراء ////
                           // IconButton(
                           //   icon: Icon(
@@ -168,11 +170,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     color: s1[widget.id]['id'] ==
                                             widget.id.toString()
                                         ? Colors.red
-                                        : Colors.green,
+                                        : Toolsutilites.greyColor,
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 10,
                                 ),
                                 AnimatedOpacity(
                                   opacity: (s1[widget.id] as dynamic)['id'] ==
@@ -187,6 +186,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     ),
                                   ),
                                 ),
+                                ///////////مكان النص
                                 Transform.translate(
                                   offset: Offset(0, -15),
                                   child: AnimatedOpacity(
@@ -194,7 +194,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                             widget.id.toString()
                                         ? 1
                                         : 0,
-                                    duration: Duration(milliseconds: 300),
+                                    ////////////الوقت لبين ما يتغير النص
+                                    duration: Duration(milliseconds: 1000),
                                     child: Text(
                                       'Added',
                                       style: TextStyle(
@@ -248,27 +249,29 @@ class SimilarProd extends StatefulWidget {
 }
 
 class _SimilarProdState extends State<SimilarProd> {
-  var productList = [
+  var productList = [ {
+    'id': 8,
+    'tagHero': '15.image',
+    "name": "White dress",
+    "picture": "assets/products/15.png",
+    "old_price": 300,
+    "new price": 250
+  },
     {
-      'tagHero': '1.image',
-      "name": "elbise",
-      "picture": "assets/products/1.png",
-      "old_price": 120,
-      "new price": 85
-    },
-    {
+      'id': 7,
       'tagHero': '2.image',
-      "name": "elbise",
+      "name": "red dress",
       "picture": "assets/products/2.png",
-      "old_price": 120,
-      "new price": 85
+      "old_price": 250,
+      "new price": 200
     },
     {
+      'id': 6,
       'tagHero': '3.image',
-      "name": "elbise",
+      "name": "Three-piece dress",
       "picture": "assets/products/3.png",
-      "old_price": 120,
-      "new price": 85
+      "old_price": 350,
+      "new price": 300
     },
   ];
 

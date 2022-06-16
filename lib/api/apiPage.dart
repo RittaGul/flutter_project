@@ -15,6 +15,7 @@ class apiPage extends StatefulWidget {
 class _apiPage extends State<apiPage> {
   @override
   void initState() {
+    /////////// هي اللي بتجيب الرابط
     getInfByApi();
     Future.delayed(Duration.zero, (() => getInfByApi()));
     super.initState();
@@ -26,8 +27,11 @@ class _apiPage extends State<apiPage> {
         body: Container(
       padding: EdgeInsets.only(top: 20),
       child: FutureBuilder(
+
+          ///لحتى تستقبل متغيرين مستقبل و بيولدر بعدا المستقبل فيها الدالة تبع البيانات
           future: getInfByApi(),
           builder: (context, snapshot) {
+            //اذا مليانة يطبع هدول
             return !getItemsByApi.isEmpty
                 ? Padding(
                     padding: const EdgeInsets.all(10),
@@ -141,6 +145,7 @@ class _apiPage extends State<apiPage> {
                       ],
                     ),
                   )
+                //دالة الانتظار اذا كانت فاضية
                 : Center(
                     child: CircularProgressIndicator(),
                   );
@@ -164,7 +169,7 @@ class NewContainer extends StatelessWidget {
       width: 250,
       height: 220,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(20),
         color: Toolsutilites.mainColor,
       ),
       child: Column(
@@ -173,8 +178,8 @@ class NewContainer extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Container(
-                height: 120,
-                width: 250,
+                height: 130,
+                width: 260,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),

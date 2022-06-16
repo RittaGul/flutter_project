@@ -80,7 +80,7 @@ class SingleCartProd extends StatelessWidget {
           children: <Widget>[
             Row(
               children: <Widget>[
-                ////هي للقياس ////
+////هي للقياس ////
                 Padding(
                   padding: const EdgeInsets.all(0.0),
                   child: Text("Size:"),
