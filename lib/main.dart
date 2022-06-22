@@ -50,7 +50,6 @@ class _newApp1State extends State<newApp1> {
           routes: {
             "usercartpage": (context) => userCartPage(),
           },
-          // initialRoute: 'login',
         ));
   }
 }

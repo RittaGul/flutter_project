@@ -155,19 +155,21 @@ class _apiPage extends State<apiPage> {
 }
 
 class NewContainer extends StatelessWidget {
-  NewContainer(
-      {required this.ContainerImage,
-      required this.ContainerTitle,
-      required this.ContainerPrice});
+  NewContainer({
+    required this.ContainerImage,
+    required this.ContainerTitle,
+    required this.ContainerPrice,
+  });
   String ContainerImage;
   String ContainerTitle;
   var ContainerPrice;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
       width: 250,
-      height: 220,
+      height: 250,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Toolsutilites.mainColor,

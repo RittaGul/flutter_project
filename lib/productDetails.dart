@@ -132,14 +132,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               child: Text("buy now "),
                             ),
                           ),
-                          ///////الايقونات اللي جنب الشراء ////
-                          // IconButton(
-                          //   icon: Icon(
-                          //     Icons.add_shopping_cart,
-                          //     color: Toolsutilites.mainColor,
-                          //   ),
-                          //   onPressed: () {},
-                          // ),
+
                           Center(
                             child: Column(
                               children: [
@@ -249,14 +242,15 @@ class SimilarProd extends StatefulWidget {
 }
 
 class _SimilarProdState extends State<SimilarProd> {
-  var productList = [ {
-    'id': 8,
-    'tagHero': '15.image',
-    "name": "White dress",
-    "picture": "assets/products/15.png",
-    "old_price": 300,
-    "new price": 250
-  },
+  var productList = [
+    {
+      'id': 8,
+      'tagHero': '15.image',
+      "name": "White dress",
+      "picture": "assets/products/15.png",
+      "old_price": 300,
+      "new price": 250
+    },
     {
       'id': 7,
       'tagHero': '2.image',
